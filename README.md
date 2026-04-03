@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ CompressIt - Enterprise-Grade File Optimization
 
-## Getting Started
+**CompressIt** is a next-generation SaaS platform designed for high-performance file compression and format conversion. Powered by WebAssembly and local-first processing, it allows users to shrink heavy PDFs and images directly in the browser with military-grade privacy.
 
-First, run the development server:
+### 🌐 Live Demo
+**[https://compressed-it.vercel.app/](https://compressed-it.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Extreme Compression**: Shrink PDFs and images by up to 90% while maintaining visual integrity.
+- **Local-First Privacy**: Files are processed 100% inside your browser's private sandbox. No data ever hits our middleman servers.
+- **Smart Format AI**: Automatically identifies the best target format (WebP, JPG, or PNG) to maximize storage savings.
+- **Bulk Processing**: Integrated queue orchestrator handles hundreds of concurrent files using multi-threaded Web Workers.
+- **Cloud Vault**: Securely save your optimized results to a private remote cloud powered by Supabase.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Built With
 
-## Learn More
+- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Database / Auth**: [Supabase](https://supabase.com/)
+- **Core Engine**: [WebAssembly (WASM)](https://webassembly.org/)
+- **Libraries**: `pdf-lib`, `browser-image-compression`, `jszip`, `lucide-react`
+- **Styling**: Tailwind CSS & Glassmorphism UI
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ujjawal2040/Compressed-It.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Configure Environment Variables**
+   Create a `.env.local` file with your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+*Made with ❤️ by Adarsh and Ujjwal*
