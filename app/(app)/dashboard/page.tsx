@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/hooks/useAuth";
 import { useFileJob, FileJob } from "@/hooks/useFileJob";
-import { formatBytes, formatDate } from "@/lib/formatters";
+import { formatBytes } from "@/lib/formatters";
 import { supabase } from "@/lib/supabase";
-import { FileDown, FileImage, ImageIcon, Download, AlertCircle, Loader2 } from "lucide-react";
+import { FileDown, FileImage, ImageIcon, Download, AlertCircle, Loader2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 type UserStats = {
@@ -216,4 +216,4 @@ function JobStatusBadge({ status }: { status: FileJob['status'] }) {
   </span>;
 }
 
-import { Zap } from "lucide-react";
+
