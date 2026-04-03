@@ -32,7 +32,7 @@ export default function ContactPage() {
       <main className="flex-1 max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col items-center">
         
         <div className="text-center mb-16 max-w-2xl">
-          <h1 className="text-4xl sm:text-6xl font-heading font-bold text-white mb-6">Let's Connect</h1>
+          <h1 className="text-4xl sm:text-6xl font-heading font-bold text-white mb-6">Let&apos;s Connect</h1>
           <p className="text-lg text-white/60 font-body">
             Have questions about enterprise deployment, need custom API access, or just want to report a bug? We are here to help.
           </p>

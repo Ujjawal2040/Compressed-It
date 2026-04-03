@@ -4,6 +4,7 @@ import JSZip from 'jszip';
 
 
 export const compressImage = async (file: File, quality: number = 0.7, targetSizeMB?: number, outputFormat?: string): Promise<File> => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const options: any = {
     maxSizeMB: targetSizeMB || 50,
     maxWidthOrHeight: 4096,
@@ -31,11 +32,14 @@ export const compressImage = async (file: File, quality: number = 0.7, targetSiz
 export const compressPDF = async (file: File, quality: number = 0.7, targetSizeMB?: number): Promise<File> => {
   try {
     // Load pdfjs
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pdfjsLib = await new Promise<any>((resolve, reject) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if ((window as any).pdfjsLib) return resolve((window as any).pdfjsLib);
       const script = document.createElement('script');
       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
       script.onload = () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const lib = (window as any).pdfjsLib;
         lib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         resolve(lib);
@@ -100,6 +104,7 @@ export const compressPDF = async (file: File, quality: number = 0.7, targetSizeM
     }
 
     const pdfBytes = await pdfDoc.save();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new File([pdfBytes as any], `compressed_${file.name}`, { type: 'application/pdf' });
   } catch (error) {
     console.error("PDF compression error:", error);
@@ -108,8 +113,9 @@ export const compressPDF = async (file: File, quality: number = 0.7, targetSizeM
       const arrayBuffer = await file.arrayBuffer();
       const pdfDoc = await PDFDocument.load(arrayBuffer, { updateMetadata: false });
       const pdfBytes = await pdfDoc.save({ useObjectStreams: false });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return new File([pdfBytes as any], `compressed_${file.name}`, { type: 'application/pdf' });
-    } catch (fallbackError) {
+    } catch {
       throw error;
     }
   }
@@ -122,14 +128,18 @@ export const pdfToImages = async (
 ): Promise<File> => {
   try {
     // Load pdfjs via CDN to avoid Next.js Webpack build issues
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pdfjsLib = await new Promise<any>((resolve, reject) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if ((window as any).pdfjsLib) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resolve((window as any).pdfjsLib);
         return;
       }
       const script = document.createElement('script');
       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
       script.onload = () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const lib = (window as any).pdfjsLib;
         lib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         resolve(lib);
@@ -176,6 +186,7 @@ export const pdfToImages = async (
       canvas.height = viewport.height;
       canvas.width = viewport.width;
       
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const renderContext: any = {
         canvasContext: context,
         viewport: viewport
@@ -253,6 +264,7 @@ export const imagesToPDF = async (files: File[], pageSize: 'A4' | 'Letter' | 'Fi
     }
     
     const pdfBytes = await pdfDoc.save();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new File([pdfBytes as any], 'merged_images.pdf', { type: 'application/pdf' });
   } catch (error) {
     console.error("Images to PDF error:", error);

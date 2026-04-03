@@ -157,7 +157,7 @@ export default function SettingsPage() {
         isConfirmLoading={isDeleting}
       >
         <div className="mt-4 border-t border-white/10 pt-4">
-          <p className="text-sm text-white/80 font-medium mb-2">Type "DELETE" to confirm:</p>
+          <p className="text-sm text-white/80 font-medium mb-2">Type &quot;DELETE&quot; to confirm:</p>
           <Input 
             value={deleteConfirmText}
             onChange={(e) => setDeleteConfirmText(e.target.value)}
