@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   DndContext,
   closestCenter,
@@ -105,7 +106,13 @@ function SortableThumbnail({ id, file, onRemove }: { id: string, file: File, onR
         isDragging ? 'shadow-2xl scale-105 border-primary/50' : ''
       }`}
     >
-      <img src={previewUrl} alt={file.name} className="w-full h-full object-cover" />
+      <Image 
+        src={previewUrl} 
+        alt={file.name} 
+        fill 
+        className="object-cover"
+        unoptimized
+      />
       
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
         <div 

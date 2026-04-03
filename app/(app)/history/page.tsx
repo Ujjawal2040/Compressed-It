@@ -5,7 +5,6 @@ import { useFileJob, FileJob } from "@/hooks/useFileJob";
 import { formatBytes, formatDate } from "@/lib/formatters";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
-import { Input } from "@/components/ui/Input";
 import { Download, Trash2, Search, Filter } from "lucide-react";
 import toast from "react-hot-toast";
 
